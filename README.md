@@ -3,4 +3,5 @@ This is where all my projects are such as my games, websites, etc. There is a (o
 There should be 3 things within this folder that you should be seeing (2 things if excluding this readme file), the HTML file and a second folder called "More Things".
 Dont click on the "More Things folder", instead open the html file and run it.
 You should be taken to my website that leads to everything else.
+(BTW I try to use as little AI as possible during these projects so I can truely improve my skills)
 Thank you.
