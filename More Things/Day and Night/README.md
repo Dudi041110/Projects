@@ -12,4 +12,7 @@ After extracting the folder.
 Open the dist folder and run the .exe file you see.
 Its not a virus.
 I promise.
-K. Toodles.
+# How to edit your copy of the file
+You need to have python downloaded (if not download it from here: https://www.python.org/downloads/).
+Then open command prompt and run this line: pip install -r requirements.txt (if that doesnt work than run this command: cd "file-path to the Day and Night folder" then try to run that command again).
+Now you should be able to open the file in your editor.
