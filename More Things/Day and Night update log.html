@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Day and Night update log
+        </title>
+        <style>
+            body {
+                background-color: #1E1E1E;
+                font-family: Arial, sans-serif;
+            }
+            h1 {
+                text-align: center;
+                background-color: #333333;
+                color: white;
+                border-radius: 25px;
+                padding: 20px;
+                width:1300px;
+                font-size: 48px;
+            }
+            h2 {
+                text-align: center;
+                background-color: #333333;
+                color: white;
+                border-radius: 25px;
+                padding: 20px;
+                width:1000px;
+                font-size: 36px;
+            }
+            p {
+                text-align: left;
+                background-color: #333333;
+                color: white;
+                border-radius: 25px;
+                padding: 20px;
+                width: 800px;
+                font-size: 20px;
+            }
+            button {
+                background-color: #2E2E2E;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                font-size: 20px;
+                width: 200px;
+                border: none;
+                border-radius: 25px;
+                transition: transform 0.2s ease, background-color 0.2s ease;
+                box-shadow: 10px 10px rgba(0, 0, 0, 0.15);
+                position: absolute;
+                left: 20px;
+            }
+            button:hover {
+                transform: scale(1.1);
+            }
+        </style>
+        <link rel="icon" href="Screenshot 2025-09-27 235342.png" type="image/png">
+    </head>
+    <body>
+        <center>
+            <h1>Day and Night update log</h1>
+            <p style="text-align: center;">
+                <big>
+                    This is the update log for my game Day and Night. It starts from version 0.0.4 cause this website was only made on this version.
+                </big>
+            </p>
+            <h2>Version 0.0.4</h2>
+            <p>
+                > The Skeleton enemy was added.<br>
+                > Room 7 was added. <br>
+                > Increased the damage cooldown (400 to 800 frames  ).<br>
+                > Added Checkpoints.<br>
+                > Deleted/Reorganized some unnecessary code.<br>
+                > Added a new decorations.<br>
+                > Added the ability to heal from killing enemies.<br>
+                > Made the endscreen show your points.<br>
+                > Added ceiling collision.
+            </p>
+        </center>
+        <form action="..\Home Page.html" method="get">
+            <button type="submit" id="home_button">
+                Back to Home Page
+            </button>
+        </form>
+        <form action="Day and Night page.html" method="get">
+            <button type="submit" id="second_button">
+                Back to Day and Night Page
+            </button>
+        </form>
+        <script>
+            const button1 = document.getElementById("home_button");
+            const button2 = document.getElementById("second_button");
+            let targetY = 10;
+            let currentY = 10;
+            window.addEventListener("scroll", () => {
+                targetY = window.scrollY + 10;
+            });
+            function animate() {
+                currentY += (targetY - currentY) * 0.11;
+                button1.style.top = currentY + "px";
+                button2.style.top = (currentY + 110) + "px";
+                requestAnimationFrame(animate);
+            }
+            animate();
+        </script>
+        <span style="color: white;">
+            <p1>
+                Made By Dudi041110
+            </p1>
+            <br>
+            <p1>
+                Click <a href="About%20Me.html" style="color: aqua;">here</a> to learn more about me
+            </p1>
+        </span>
+    </body>
+</html>
