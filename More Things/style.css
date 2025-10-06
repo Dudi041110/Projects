@@ -93,6 +93,7 @@ button:hover {
     background-color: #333333;
     color: white;
     border-radius: 25px;
+    padding: 20px;
 }
 
 .Day_and_night_page figcaption {
