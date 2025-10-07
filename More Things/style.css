@@ -50,6 +50,16 @@ button:hover {
     background-color: #505050;
 }
 
+a {
+    color: rgb(79, 255, 255);
+    text-decoration: underline;
+    transition: text-shadow 0.3s ease;
+}
+
+a:hover {
+    text-shadow: 0 0 8px rgb(79, 255, 255), 0 0 16px rgb(79, 255, 255);
+}
+
 .about_me h2 {
     font-size: 36px;
 }
