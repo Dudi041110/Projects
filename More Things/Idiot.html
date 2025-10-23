@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            You're... an idiot
+        </title>
+        <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg3QIIl6kIyU1x_A8z58OTBwF4fFYv1yqvMA&s" type="image">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+                background: #111;
+                color: white;
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+            canvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                pointer-events: none;
+            }
+            h1, h2, form {
+                position: relative;
+                z-index: 1;
+            }
+            #second_button {
+                background-color: crimson;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 18px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            #second_button:hover {
+                background-color: darkred;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="confetti"></canvas>
+
+        <center>
+            <h1>
+                YOU'RE AN IDIOT
+            </h1>
+            <h2>
+                WHO IN THEIR RIGHT MIND, IS CLICKING OR ON AN EITHER OR QUESTION.<br>
+                YOU ******* *******
+            </h2>
+            <form action="Day and Night page.html" method="get">
+                <button type="submit" id="second_button">
+                    <b>GO BACK</b>
+                </button>
+            </form>
+        </center>
+
+        <script>
+            const canvas = document.getElementById('confetti');
+            const ctx = canvas.getContext('2d');
+            let W = window.innerWidth;
+            let H = window.innerHeight;
+            canvas.width = W;
+            canvas.height = H;
+
+            const confettis = Array.from({ length: 150 }, () => ({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                r: Math.random() * 6 + 2,
+                dx: Math.random() - 0.5,
+                dy: Math.random() * 3 + 2,
+                color: `hsl(${Math.random() * 360}, 100%, 60%)`
+            }));
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                confettis.forEach(c => {
+                    ctx.beginPath();
+                    ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+                    ctx.fillStyle = c.color;
+                    ctx.fill();
+
+                    c.x += c.dx;
+                    c.y += c.dy;
+                    if (c.y > H) c.y = -10;
+                    if (c.x > W) c.x = 0;
+                    if (c.x < 0) c.x = W;
+                });
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+
+            window.addEventListener('resize', () => {
+                W = window.innerWidth;
+                H = window.innerHeight;
+                canvas.width = W;
+                canvas.height = H;
+            });
+        </script>
+    </body>
+</html>
